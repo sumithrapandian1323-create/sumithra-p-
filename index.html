@@ -1,0 +1,1061 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Sumithra P | AI & Data Science Portfolio</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:"Segoe UI",Arial,sans-serif;
+    background:#070b1a;
+    color:white;
+    line-height:1.6;
+}
+
+/* ===== NAVBAR ===== */
+
+nav{
+    position:sticky;
+    top:0;
+    z-index:1000;
+    padding:18px 7%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background:rgba(10,15,35,0.92);
+    backdrop-filter:blur(12px);
+    border-bottom:1px solid rgba(255,255,255,0.08);
+}
+
+nav h2{
+    font-size:25px;
+    background:linear-gradient(90deg,#38bdf8,#a855f7,#ec4899);
+    -webkit-background-clip:text;
+    color:transparent;
+}
+
+nav a{
+    color:#e2e8f0;
+    text-decoration:none;
+    margin-left:20px;
+    font-size:15px;
+    transition:.3s;
+}
+
+nav a:hover{
+    color:#38bdf8;
+}
+
+/* ===== HERO ===== */
+
+.home{
+    min-height:92vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:40px 8%;
+    position:relative;
+    overflow:hidden;
+}
+
+.home::before{
+    content:"";
+    position:absolute;
+    width:350px;
+    height:350px;
+    background:#7c3aed;
+    filter:blur(130px);
+    opacity:.35;
+    top:50px;
+    left:10%;
+}
+
+.home::after{
+    content:"";
+    position:absolute;
+    width:350px;
+    height:350px;
+    background:#06b6d4;
+    filter:blur(130px);
+    opacity:.3;
+    bottom:20px;
+    right:10%;
+}
+
+.hero-content{
+    position:relative;
+    z-index:2;
+}
+
+.profile-circle{
+    width:150px;
+    height:150px;
+    margin:0 auto 25px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:linear-gradient(135deg,#38bdf8,#8b5cf6,#ec4899);
+    box-shadow:0 0 45px rgba(56,189,248,.35);
+    font-size:55px;
+}
+
+.home h1{
+    font-size:58px;
+    margin-bottom:12px;
+}
+
+.home h1 span{
+    background:linear-gradient(90deg,#38bdf8,#a855f7,#ec4899);
+    -webkit-background-clip:text;
+    color:transparent;
+}
+
+.home h3{
+    color:#a5b4fc;
+    font-size:24px;
+    margin-bottom:12px;
+}
+
+.home p{
+    color:#cbd5e1;
+    font-size:18px;
+    max-width:700px;
+    margin:auto;
+}
+
+.buttons{
+    margin-top:28px;
+}
+
+.btn{
+    display:inline-block;
+    padding:13px 25px;
+    margin:8px;
+    border-radius:30px;
+    text-decoration:none;
+    font-weight:bold;
+    color:white;
+    background:linear-gradient(90deg,#06b6d4,#8b5cf6);
+    box-shadow:0 8px 25px rgba(99,102,241,.25);
+    transition:.3s;
+}
+
+.btn:hover{
+    transform:translateY(-4px);
+    box-shadow:0 12px 30px rgba(56,189,248,.4);
+}
+
+.btn-outline{
+    background:transparent;
+    border:1px solid #38bdf8;
+}
+
+/* ===== COMMON ===== */
+
+section{
+    padding:90px 8%;
+}
+
+.title{
+    text-align:center;
+    font-size:38px;
+    margin-bottom:45px;
+    background:linear-gradient(90deg,#38bdf8,#a855f7,#ec4899);
+    -webkit-background-clip:text;
+    color:transparent;
+}
+
+/* ===== ABOUT ===== */
+
+.about-box{
+    max-width:900px;
+    margin:auto;
+    background:linear-gradient(
+        135deg,
+        rgba(30,41,59,.8),
+        rgba(15,23,42,.8)
+    );
+    border:1px solid rgba(148,163,184,.15);
+    border-radius:25px;
+    padding:35px;
+    text-align:center;
+    box-shadow:0 15px 40px rgba(0,0,0,.25);
+}
+
+.about-box p{
+    color:#cbd5e1;
+    font-size:18px;
+    margin-bottom:15px;
+}
+
+/* ===== SKILLS ===== */
+
+.skills-grid{
+    max-width:1100px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:22px;
+}
+
+.skill-card{
+    background:linear-gradient(145deg,#111827,#1e293b);
+    padding:28px;
+    border-radius:20px;
+    border:1px solid rgba(255,255,255,.08);
+    transition:.35s;
+}
+
+.skill-card:hover{
+    transform:translateY(-8px);
+    border-color:#38bdf8;
+    box-shadow:0 15px 35px rgba(56,189,248,.15);
+}
+
+.skill-card h3{
+    color:#38bdf8;
+    margin-bottom:18px;
+    font-size:21px;
+}
+
+.skill-name{
+    display:flex;
+    justify-content:space-between;
+    margin-top:12px;
+    color:#cbd5e1;
+}
+
+.progress{
+    width:100%;
+    height:8px;
+    background:#0f172a;
+    border-radius:10px;
+    overflow:hidden;
+    margin-top:6px;
+}
+
+.progress span{
+    display:block;
+    height:100%;
+    border-radius:10px;
+    background:linear-gradient(90deg,#06b6d4,#8b5cf6,#ec4899);
+}
+
+/* ===== PROJECTS ===== */
+
+.cards{
+    max-width:1100px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:25px;
+}
+
+.card{
+    padding:30px;
+    border-radius:22px;
+    background:linear-gradient(145deg,#111827,#1e293b);
+    border:1px solid rgba(255,255,255,.08);
+    transition:.35s;
+    position:relative;
+    overflow:hidden;
+}
+
+.card::before{
+    content:"";
+    position:absolute;
+    height:4px;
+    width:100%;
+    left:0;
+    top:0;
+    background:linear-gradient(90deg,#06b6d4,#8b5cf6,#ec4899);
+}
+
+.card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 15px 35px rgba(139,92,246,.18);
+}
+
+.card-icon{
+    font-size:42px;
+    margin-bottom:15px;
+}
+
+.card h3{
+    color:#38bdf8;
+    margin-bottom:12px;
+    font-size:22px;
+}
+
+.card p{
+    color:#cbd5e1;
+}
+
+/* ===== CERTIFICATES ===== */
+
+.certificate-card{
+    text-align:center;
+}
+
+.certificate-icon{
+    font-size:45px;
+    margin-bottom:15px;
+}
+
+.certificate-card h3{
+    color:#f0abfc;
+}
+
+.certificate-card p{
+    margin-top:6px;
+}
+
+/* ===== EDUCATION ===== */
+
+.education{
+    max-width:900px;
+    margin:auto;
+}
+
+.edu-card{
+    padding:28px;
+    margin-bottom:20px;
+    border-left:4px solid #38bdf8;
+    background:#111827;
+    border-radius:15px;
+}
+
+.edu-card h3{
+    color:#38bdf8;
+}
+
+.edu-card p{
+    color:#cbd5e1;
+}
+
+/* ===== CONTACT ===== */
+
+.contact-box{
+    max-width:800px;
+    margin:auto;
+    text-align:center;
+    background:linear-gradient(145deg,#111827,#1e293b);
+    padding:40px;
+    border-radius:25px;
+    border:1px solid rgba(255,255,255,.08);
+}
+
+.contact-item{
+    margin:20px;
+    font-size:17px;
+    color:#cbd5e1;
+}
+
+.contact-item a{
+    color:#38bdf8;
+    text-decoration:none;
+}
+
+.contact-item a:hover{
+    color:#f0abfc;
+}
+
+/* ===== SOCIAL ===== */
+
+.social{
+    margin-top:25px;
+}
+
+.social a{
+    display:inline-block;
+    margin:8px;
+    padding:11px 20px;
+    border-radius:25px;
+    text-decoration:none;
+    color:white;
+    border:1px solid #475569;
+    transition:.3s;
+}
+
+.social a:hover{
+    background:#38bdf8;
+    color:#07111f;
+}
+
+/* ===== FOOTER ===== */
+
+footer{
+    text-align:center;
+    padding:30px;
+    background:#030712;
+    color:#94a3b8;
+}
+
+/* ===== TOP BUTTON ===== */
+
+.top{
+    position:fixed;
+    bottom:25px;
+    right:25px;
+    width:45px;
+    height:45px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:linear-gradient(135deg,#06b6d4,#8b5cf6);
+    color:white;
+    text-decoration:none;
+    font-size:20px;
+}
+
+/* ===== MOBILE ===== */
+
+@media(max-width:750px){
+
+    nav{
+        flex-direction:column;
+        gap:12px;
+    }
+
+    nav div{
+        text-align:center;
+    }
+
+    nav a{
+        display:inline-block;
+        margin:5px 7px;
+        font-size:13px;
+    }
+
+    .home h1{
+        font-size:40px;
+    }
+
+    .home h3{
+        font-size:19px;
+    }
+
+    .home p{
+        font-size:16px;
+    }
+
+    .profile-circle{
+        width:120px;
+        height:120px;
+        font-size:45px;
+    }
+
+    section{
+        padding:65px 6%;
+    }
+
+    .title{
+        font-size:31px;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- ===== NAVIGATION ===== -->
+
+<nav>
+
+    <h2>Sumithra P</h2>
+
+    <div>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#certificates">Certificates</a>
+        <a href="#education">Education</a>
+        <a href="#contact">Contact</a>
+    </div>
+
+</nav>
+
+
+<!-- ===== HOME ===== -->
+
+<section class="home" id="home">
+
+    <div class="hero-content">
+
+        <div class="profile-circle">
+            👩‍💻
+        </div>
+
+        <h1>
+            Hi, I'm <span>Sumithra P</span>
+        </h1>
+
+        <h3>
+            B.Tech AI & Data Science Student
+        </h3>
+
+        <p>
+            Passionate about Artificial Intelligence,
+            Data Science, Programming and Emerging Technologies.
+        </p>
+
+        <div class="buttons">
+
+            <a href="#projects" class="btn">
+                🚀 View My Projects
+            </a>
+
+            <a href="#contact" class="btn btn-outline">
+                📩 Contact Me
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ===== ABOUT ===== -->
+
+<section id="about">
+
+    <h2 class="title">About Me</h2>
+
+    <div class="about-box">
+
+        <p>
+            👋 Hello! I am <b>Sumithra P</b>, a B.Tech Artificial
+            Intelligence and Data Science student at
+            NPR College of Engineering and Technology.
+        </p>
+
+        <p>
+            I am interested in Artificial Intelligence,
+            Data Science, programming and web technologies.
+            I enjoy learning new technologies, solving problems
+            and creating useful projects.
+        </p>
+
+        <p>
+            My goal is to continuously improve my technical skills
+            and build innovative technology solutions.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- ===== SKILLS ===== -->
+
+<section id="skills">
+
+    <h2 class="title">My Skills</h2>
+
+    <div class="skills-grid">
+
+        <div class="skill-card">
+
+            <h3>💻 Programming</h3>
+
+            <div class="skill-name">
+                <span>C</span>
+                <span>80%</span>
+            </div>
+            <div class="progress">
+                <span style="width:80%"></span>
+            </div>
+
+            <div class="skill-name">
+                <span>C++</span>
+                <span>75%</span>
+            </div>
+            <div class="progress">
+                <span style="width:75%"></span>
+            </div>
+
+            <div class="skill-name">
+                <span>Java</span>
+                <span>70%</span>
+            </div>
+            <div class="progress">
+                <span style="width:70%"></span>
+            </div>
+
+            <div class="skill-name">
+                <span>Python</span>
+                <span>75%</span>
+            </div>
+            <div class="progress">
+                <span style="width:75%"></span>
+            </div>
+
+        </div>
+
+
+        <div class="skill-card">
+
+            <h3>🌐 Web Development</h3>
+
+            <div class="skill-name">
+                <span>HTML</span>
+                <span>85%</span>
+            </div>
+            <div class="progress">
+                <span style="width:85%"></span>
+            </div>
+
+            <div class="skill-name">
+                <span>CSS</span>
+                <span>80%</span>
+            </div>
+            <div class="progress">
+                <span style="width:80%"></span>
+            </div>
+
+            <div class="skill-name">
+                <span>JavaScript</span>
+                <span>65%</span>
+            </div>
+            <div class="progress">
+                <span style="width:65%"></span>
+            </div>
+
+        </div>
+
+
+        <div class="skill-card">
+
+            <h3>📊 Data Science</h3>
+
+            <div class="skill-name">
+                <span>Python</span>
+                <span>75%</span>
+            </div>
+            <div class="progress">
+                <span style="width:75%"></span>
+            </div>
+
+            <div class="skill-name">
+                <span>NumPy</span>
+                <span>65%</span>
+            </div>
+            <div class="progress">
+                <span style="width:65%"></span>
+            </div>
+
+            <div class="skill-name">
+                <span>Pandas</span>
+                <span>65%</span>
+            </div>
+            <div class="progress">
+                <span style="width:65%"></span>
+            </div>
+
+            <div class="skill-name">
+                <span>Data Visualization</span>
+                <span>60%</span>
+            </div>
+            <div class="progress">
+                <span style="width:60%"></span>
+            </div>
+
+        </div>
+
+
+        <div class="skill-card">
+
+            <h3>🗄️ Database</h3>
+
+            <div class="skill-name">
+                <span>MySQL</span>
+                <span>70%</span>
+            </div>
+
+            <div class="progress">
+                <span style="width:70%"></span>
+            </div>
+
+            <div class="skill-name">
+                <span>SQL Basics</span>
+                <span>70%</span>
+            </div>
+
+            <div class="progress">
+                <span style="width:70%"></span>
+            </div>
+
+        </div>
+
+
+        <div class="skill-card">
+
+            <h3>🛠️ Tools</h3>
+
+            <div class="skill-name">
+                <span>GitHub</span>
+                <span>75%</span>
+            </div>
+
+            <div class="progress">
+                <span style="width:75%"></span>
+            </div>
+
+            <div class="skill-name">
+                <span>MS Word</span>
+                <span>85%</span>
+            </div>
+
+            <div class="progress">
+                <span style="width:85%"></span>
+            </div>
+
+            <div class="skill-name">
+                <span>PowerPoint</span>
+                <span>85%</span>
+            </div>
+
+            <div class="progress">
+                <span style="width:85%"></span>
+            </div>
+
+        </div>
+
+
+        <div class="skill-card">
+
+            <h3>🤖 Interests</h3>
+
+            <p>Artificial Intelligence</p>
+            <p>Data Science</p>
+            <p>Machine Learning</p>
+            <p>Web Development</p>
+            <p>Emerging Technologies</p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ===== PROJECTS ===== -->
+
+<section id="projects">
+
+    <h2 class="title">My Projects</h2>
+
+    <div class="cards">
+
+        <div class="card">
+
+            <div class="card-icon">✅</div>
+
+            <h3>To-Do List Application</h3>
+
+            <p>
+                A simple and responsive web application
+                for creating, managing and completing
+                daily tasks.
+            </p>
+
+            <p><b>Technologies:</b> HTML, CSS, JavaScript</p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="card-icon">🩸</div>
+
+            <h3>BloodLink</h3>
+
+            <p>
+                A Blood Donation Finder concept designed
+                to connect blood donors with people who
+                need blood.
+            </p>
+
+            <p><b>Technologies:</b> HTML, CSS, JavaScript</p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="card-icon">🚌</div>
+
+            <h3>Smart Bus Tracking</h3>
+
+            <p>
+                A smart transportation concept for tracking
+                buses and providing useful travel information
+                to passengers.
+            </p>
+
+            <p><b>Technologies:</b> HTML, CSS, JavaScript, Maps Concept</p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="card-icon">🤖</div>
+
+            <h3>AI-Based Smart Inventory</h3>
+
+            <p>
+                An AI-based concept for managing inventory,
+                monitoring stock and improving inventory
+                decision-making.
+            </p>
+
+            <p><b>Area:</b> Artificial Intelligence & Data Science</p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ===== CERTIFICATES ===== -->
+
+<section id="certificates">
+
+    <h2 class="title">Certificates & Achievements</h2>
+
+    <div class="cards">
+
+        <div class="card certificate-card">
+
+            <div class="certificate-icon">🏆</div>
+
+            <h3>HP LIFE Certificate</h3>
+
+            <p>HP LIFE</p>
+
+            <p>Professional Learning Certificate</p>
+
+        </div>
+
+
+        <div class="card certificate-card">
+
+            <div class="certificate-icon">🏆</div>
+
+            <h3>IBM Certificate</h3>
+
+            <p>IBM</p>
+
+            <p>Professional Learning Certificate</p>
+
+        </div>
+
+
+        <div class="card certificate-card">
+
+            <div class="certificate-icon">🎓</div>
+
+            <h3>Symposium Certificate</h3>
+
+            <p>Symposium Participation</p>
+
+            <p>Certificate of Participation</p>
+
+        </div>
+
+
+        <div class="card certificate-card">
+
+            <div class="certificate-icon">🏭</div>
+
+            <h3>Industrial Visit Certificate</h3>
+
+            <p>Industrial Visit</p>
+
+            <p>Certificate of Participation</p>
+
+        </div>
+
+
+        <div class="card certificate-card">
+
+            <div class="certificate-icon">💡</div>
+
+            <h3>Technical Learning</h3>
+
+            <p>Programming & Technology</p>
+
+            <p>Continuous Learning</p>
+
+        </div>
+
+
+        <div class="card certificate-card">
+
+            <div class="certificate-icon">🚀</div>
+
+            <h3>Project Development</h3>
+
+            <p>Academic Projects</p>
+
+            <p>Practical Technology Learning</p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ===== EDUCATION ===== -->
+
+<section id="education">
+
+    <h2 class="title">Education</h2>
+
+    <div class="education">
+
+        <div class="edu-card">
+
+            <h3>🎓 B.Tech Artificial Intelligence & Data Science</h3>
+
+            <p>NPR College of Engineering and Technology</p>
+            <p>Currently Pursuing</p>
+
+        </div>
+
+
+        <div class="edu-card">
+
+            <h3>📚 Higher Secondary Education</h3>
+
+            <p>Devanger Higher Secondary School, Dindigul</p>
+            <p>HSC</p>
+
+        </div>
+
+
+        <div class="edu-card">
+
+            <h3>📖 Secondary Education</h3>
+
+            <p>Devanger Girls High School, Chinnalapatti</p>
+            <p>SSLC</p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ===== CONTACT ===== -->
+
+<section id="contact">
+
+    <h2 class="title">Let's Connect</h2>
+
+    <div class="contact-box">
+
+        <div class="contact-item">
+            📧
+            <b>Email:</b>
+            <a href="mailto:sumithrapandian47@gmail.com">
+                sumithrapandian47@gmail.com
+            </a>
+        </div>
+
+
+        <div class="contact-item">
+
+            💼
+            <b>LinkedIn:</b>
+
+            <a
+                href="https://www.linkedin.com/in/sumithra-p-46a8533aa"
+                target="_blank">
+                View My LinkedIn
+            </a>
+
+        </div>
+
+
+        <div class="contact-item">
+
+            💻
+            <b>GitHub:</b>
+
+            <a
+                href="https://github.com/sumithrapandian1323-create"
+                target="_blank">
+                View My GitHub
+            </a>
+
+        </div>
+
+
+        <div class="social">
+
+            <a
+                href="https://www.linkedin.com/in/sumithra-p-46a8533aa"
+                target="_blank">
+                LinkedIn
+            </a>
+
+            <a
+                href="https://github.com/sumithrapandian1323-create"
+                target="_blank">
+                GitHub
+            </a>
+
+            <a href="mailto:sumithrapandian47@gmail.com">
+                Email Me
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ===== FOOTER ===== -->
+
+<footer>
+
+    <p>
+        © 2026 Sumithra P | B.Tech AI & Data Science
+    </p>
+
+    <p>
+        Designed & Developed by Sumithra P 💙
+    </p>
+
+</footer>
+
+
+<!-- ===== TOP BUTTON ===== -->
+
+<a href="#home" class="top">↑</a>
+
+</body>
+                                          </html>
